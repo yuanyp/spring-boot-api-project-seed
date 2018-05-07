@@ -19,4 +19,11 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Resource
     private UserMapper userMapper;
 
+    @Override
+    public void updateAbc(User model) {
+        User a = userMapper.selectOne(model);
+        a.setNickName("哈哈哈");
+        userMapper.updateByPrimaryKey(a);
+        //TODO
+    }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.manyit.project.dao.FileMapper">
+  <resultMap id="BaseResultMap" type="com.manyit.project.model.File">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="OBJECTCLASS" jdbcType="VARCHAR" property="objectclass" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="USERID" jdbcType="VARCHAR" property="userid" />
+    <result column="FOLDER" jdbcType="INTEGER" property="folder" />
+    <result column="FILENO" jdbcType="VARCHAR" property="fileno" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="IMPORTANCE" jdbcType="INTEGER" property="importance" />
+    <result column="CONFIDENCE" jdbcType="INTEGER" property="confidence" />
+    <result column="URGENT" jdbcType="VARCHAR" property="urgent" />
+    <result column="PAGES" jdbcType="INTEGER" property="pages" />
+    <result column="SUBJECT" jdbcType="VARCHAR" property="subject" />
+    <result column="DEPTID" jdbcType="VARCHAR" property="deptid" />
+    <result column="DRAFTDEPARTMENT" jdbcType="VARCHAR" property="draftdepartment" />
+    <result column="DRAFTDEPARTMENTID" jdbcType="INTEGER" property="draftdepartmentid" />
+    <result column="ISTRACE" jdbcType="INTEGER" property="istrace" />
+    <result column="ISVIEWED" jdbcType="INTEGER" property="isviewed" />
+    <result column="SUPERVISE" jdbcType="INTEGER" property="supervise" />
+    <result column="HITCOUNT" jdbcType="INTEGER" property="hitcount" />
+    <result column="NOTARCHIVE" jdbcType="INTEGER" property="notarchive" />
+    <result column="TIMELIMITTIME" jdbcType="VARCHAR" property="timelimittime" />
+    <result column="TIMELIMITDATE" jdbcType="CHAR" property="timelimitdate" />
+    <result column="COMPLETETIME" jdbcType="CHAR" property="completetime" />
+    <result column="COMPLETEDATE" jdbcType="CHAR" property="completedate" />
+    <result column="CREATEDATE" jdbcType="CHAR" property="createdate" />
+    <result column="CREATETIME" jdbcType="CHAR" property="createtime" />
+    <result column="WF_INSTANCEID" jdbcType="VARCHAR" property="wfInstanceid" />
+    <result column="FORM_ID" jdbcType="INTEGER" property="formId" />
+    <result column="FILL_STATUS" jdbcType="INTEGER" property="fillStatus" />
+    <result column="PUBLISHDATE" jdbcType="VARCHAR" property="publishdate" />
+    <result column="PUBLISHSTATUS" jdbcType="INTEGER" property="publishstatus" />
+    <result column="UNIT_ID" jdbcType="VARCHAR" property="unitId" />
+    <result column="ISFORCE" jdbcType="INTEGER" property="isforce" />
+    <result column="FORCEUSER" jdbcType="VARCHAR" property="forceuser" />
+    <result column="FILEATT" jdbcType="VARCHAR" property="fileatt" />
+    <result column="ISCANCELWF" jdbcType="INTEGER" property="iscancelwf" />
+    <result column="WF_ID" jdbcType="INTEGER" property="wfId" />
+    <result column="VIEWUSERIDS" jdbcType="VARCHAR" property="viewuserids" />
+    <result column="FILENO_TIME" jdbcType="VARCHAR" property="filenoTime" />
+    <result column="VIEWUSERNAMES" jdbcType="VARCHAR" property="viewusernames" />
+    <result column="DURATION" jdbcType="INTEGER" property="duration" />
+    <result column="COMPLETEALERTUSERS" jdbcType="VARCHAR" property="completealertusers" />
+    <result column="COMPLETEALERTNAMES" jdbcType="VARCHAR" property="completealertnames" />
+    <result column="ISPAPERSIGN" jdbcType="INTEGER" property="ispapersign" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="HQ_DEPTIDS" jdbcType="VARCHAR" property="hqDeptids" />
+    <result column="HQ_DEPTNAMES" jdbcType="VARCHAR" property="hqDeptnames" />
+    <result column="RHQ_DEPTIDS" jdbcType="VARCHAR" property="rhqDeptids" />
+    <result column="RHQ_DEPTNAMES" jdbcType="VARCHAR" property="rhqDeptnames" />
+    <result column="FILENO_ID" jdbcType="INTEGER" property="filenoId" />
+    <result column="FILENO_NO" jdbcType="VARCHAR" property="filenoNo" />
+    <result column="LASTTIME" jdbcType="VARCHAR" property="lasttime" />
+    <result column="LISTTIME" jdbcType="VARCHAR" property="listtime" />
+    <result column="DEPTNAME" jdbcType="VARCHAR" property="deptname" />
+    <result column="ORG_FILEID" jdbcType="VARCHAR" property="orgFileid" />
+    <result column="FILETYPEID" jdbcType="INTEGER" property="filetypeid" />
+    <result column="IS_INVALID" jdbcType="INTEGER" property="isInvalid" />
+    <result column="COMPLETEUSER" jdbcType="VARCHAR" property="completeuser" />
+  </resultMap>
+
+  <select id="abcd" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+    SELECT *
+    FROM t_file
+    WHERE id = #{id}
+  </select>
+</mapper>

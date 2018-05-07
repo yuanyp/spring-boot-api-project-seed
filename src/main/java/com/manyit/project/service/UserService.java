@@ -8,4 +8,6 @@ import com.manyit.project.core.Service;
  */
 public interface UserService extends Service<User> {
 
+    void updateAbc(User model);//复杂业务逻辑代码
+
 }

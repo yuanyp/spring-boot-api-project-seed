@@ -1,8 +1,8 @@
 package com.manyit.project.web;
 import com.manyit.project.core.Result;
 import com.manyit.project.core.ResultGenerator;
-import com.manyit.project.model.User;
-import com.manyit.project.service.UserService;
+import com.manyit.project.model.File;
+import com.manyit.project.service.FileService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,46 +17,52 @@ import java.util.List;
 * Created by CodeGenerator on 2018/05/03.
 */
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/file")
+public class FileController {
     @Resource
-    private UserService userService;
+    private FileService fileService;
 
     @PostMapping("/add")
-    public Result add(User user) {
-        userService.save(user);
+    public Result add(File file) {
+        fileService.save(file);
         return ResultGenerator.genSuccessResult();
     }
 
     @PostMapping("/delete")
     public Result delete(@RequestParam Integer id) {
-        userService.deleteById(id);
+        fileService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
     @PostMapping("/update")
-    public Result update(User user) {
-        userService.update(user);
+    public Result update(File file) {
+        fileService.update(file);
         return ResultGenerator.genSuccessResult();
     }
 
     @PostMapping("/detail")
     public Result detail(@RequestParam Integer id) {
-        User user = userService.findById(id);
-        return ResultGenerator.genSuccessResult(user);
+        File file = fileService.findById(id);
+        return ResultGenerator.genSuccessResult(file);
     }
 
     @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
-        List<User> list = userService.findAll();
+        List<File> list = fileService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
 
-    @PostMapping("/updateAbc")
-    public Result updateAbc(User user) {
-        userService.updateAbc(user);
-        return ResultGenerator.genSuccessResult();
+    @PostMapping("/abcd")
+    public Result abcd(@RequestParam Integer id) {
+        File file = fileService.abcd(id);
+        return ResultGenerator.genSuccessResult(file);
+    }
+
+    @PostMapping("/qwer")
+    public Result qwer(@RequestParam Integer id) {
+        File file = fileService.qwer(id);
+        return ResultGenerator.genSuccessResult(file);
     }
 }
